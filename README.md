@@ -20,7 +20,7 @@ A personal gallery application that you display your photos for others to see.
 
 ## Author(s) information
 
-> Ephraim Kamau
+> Ephraim Kamau/Junior
 
 ## Contact information
 
