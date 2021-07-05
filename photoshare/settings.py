@@ -23,9 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -99,7 +96,10 @@ else:
    }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
+
+
 DATABASES['default'].update(db_from_env)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
