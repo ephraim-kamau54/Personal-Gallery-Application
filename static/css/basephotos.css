@@ -2,20 +2,28 @@ h1 {
     color: orangered;
 }
 
+h2 {
+   color: burlywood;
+}
+
+a {
+    color: blue;
+}
+
 p {
     color: greenyellow;
 }
 
-body {
+body { 
    background-image: url(
-       'https://images.unsplash.com/photo-1513151233558-d860c5398176?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGJhY2tncm91bmR8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+       'https://images.unsplash.com/photo-1541746951956-4f27df54f02b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NDgxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
    );
    background-repeat: no-repeat;
    background-size: cover;
 }
 
 .all-images{
-    display :flex;
+    display :table-row;
     color :whitesmoke
 }
 

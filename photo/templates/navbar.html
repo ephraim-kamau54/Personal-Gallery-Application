@@ -4,21 +4,32 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="{% url 'photosToday' %}">The Personal Gallery Application</a>
     </div>
-     
-    <div class="text-center">
-        <a class="btn btn-success me-2" href="/admin" target="_blank" role="button">Admin <i
-                class="fas fa-download"></i></a>
+    
+    <div class="col-sm-4 col-md-4 navbar-center">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Action</button>
+            <button class="dropdown-item" type="button">Another action</button>
+            <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+        <!-- <div class="col-sm-4 col-md-4"> -->
+
+        <div class="col-sm-4 col-md-4">
+            <a class="btn btn-success me-2" href="/admin" target="_blank" role="button">Admin <i
+                    class="fas fa-download"></i></a>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <a class="btn btn-success me-2" href="/link" target="_blank" role="button">Link <i
+                    class="fas fa-download"></i></a>
+        </div>
     </div>
 
-     {%for category in categories%}
-     <li class="list-group-item">
-         <a href="{% url 'navbar.html' %}?category={{photo}}">{{photo}}</a>
-     </li>
-
-     {%endfor%}
-    
     <!-- Adding a search form  -->
-    <div class="col-sm-4 col-md-4 navbar-right">
+    <div class="col-sm-2 col-md-3 navbar-right">
 
         <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
@@ -32,5 +43,15 @@
         </form>
     </div>
     <!-- search form end -->
+    
+
+     {%for category in categories%}
+     <li class="list-group-item">
+         <a href="{% url 'navbar.html' %}?category={{photo}}">{{photo}}</a>
+     </li>
+
+     {%endfor%}
+    
+    
 </div>
 </nav>
