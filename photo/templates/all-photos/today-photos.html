@@ -8,14 +8,18 @@
     {% for photos_item in photos %}
      <div class="row">
          <!-- displaying Photos articles -->
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-             <h2 class="text-center"> {{ photos_item.title }} </h2>
-             <p>{{photos_item.post}}</p>
-         </div>
+         <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+             
+             
+         </div> -->
          
          <!--Display photos Article images  -->
+         <div class="card-deck">
+         <div class="card">
          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+             <h2 class="text-center"> {{ photos_item.title }} </h2>
              <img src="{{photos_item.article_image.url}}" class="img-responsive" alt="Image">
+             <p>{{photos_item.post}}</p>
              <div class="card" style="width: 18rem;">
                  <div class="card-body">
                      <!-- <h5 class="card-title">Card title</h5>

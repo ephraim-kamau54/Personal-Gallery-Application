@@ -6,13 +6,17 @@ h2 {
    color: burlywood;
 }
 
+a {
+    color: blue;
+}
+
 p {
     color: greenyellow;
 }
 
 body {
    background-image: url(
-       'https://images.unsplash.com/photo-1590046395380-36cd80b1ab42?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fG5hdHVyZXxlbnwwfDB8MHxibGFja3w%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+       'https://images.unsplash.com/photo-1426170042593-200f250dfdaf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTU0fHxwaWNzYXJ0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
    );
    background-repeat: no-repeat;
    background-size: cover;
