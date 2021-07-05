@@ -12,7 +12,8 @@ A personal gallery application that you display your photos for others to see.
 
 ## Technologies used
 
-* JavaScript
+* shell,
+* JavaScript,
 * Django,
 * Html,
 * python.
