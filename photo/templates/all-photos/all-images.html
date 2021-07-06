@@ -1,0 +1,27 @@
+ 
+{%block content%} 
+
+<div class="container m-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                {% for photos_item in photo %}
+                <div class="col-md-4 ">
+                    <div class="card my-2">
+                        <a href="{%url 'article' image.id%}"><img class="image1" src="{{article.article.image.url}}"
+                                alt="Card image cap"></a>
+                        <div class="card-body">
+                            <small>{{article.article.description }}</small>
+                        </div>
+                        <a href="{%url 'article' image.id%}" class="btn btn-outline-dark btn-sm m-1"> View</a>
+                    </div>
+                </div>
+                {%empty%}
+                <h3>No photos...</h3>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%}
