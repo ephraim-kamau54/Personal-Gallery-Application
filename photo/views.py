@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 import datetime as dt
-from .models import Article
+from .models import Article, Images
 
 
 # Create your views here.
@@ -47,4 +47,18 @@ def article(request,article_id):
         article = Article.objects.get(id = article_id)
     except ValueError:
         raise Http404()
-    return render(request,"all-photos/article.html", {"article":article})  
+    return render(request,"all-photos/article.html", {"article":article}) 
+
+def image(request,images_id):
+    try:
+        image = Images.objects.get(id = images_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-photo/artilce.html", {"image":image})
+def filter_by_location(request,location_id):
+   """
+   Function that filters images by location
+   """
+   images = Images.filter_by_location(id=location_id )
+   return render (request, 'location.html', {"images":images})
+   

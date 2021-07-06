@@ -20,6 +20,21 @@
         <p>Posted {{article.pub_date|timesince}} by {{article.editor.first_name}}</p>
     </div>
 
+    <div class="modal-body">
+        <img src="{{article.article.image.url}}" class="img-fluid" data-toggle="modal"
+            data-target="#exampleModal{{image.id}}" style="width: 100%;">
+        <p> {{article.article.description }}</p><label for="location"> Image location
+            :{{article.article.location }}</label>
+
+    <div class="modal-footer">
+        <input class="form-control" type="text" value="http://127.0.0.1:8000/{{article.article.image.url}}"
+            id="thislinkhere-{photo_item:id}">
+        <a onclick="copyLink( {photo_item:id} )"><button type="button"
+                class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy
+                image Link</button></a>
+
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
 </div>
 
 {% endblock %}
