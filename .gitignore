@@ -4,6 +4,7 @@
 *$py.class
 virtual/
 *.pyc
+.env
 
 # C extensions
 *.so
