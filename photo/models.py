@@ -107,8 +107,6 @@ class Images(models.Model):
     description = models.TextField()
     author = models.CharField(max_length=40, default='admin')
     date = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=100)
-    image = CloudinaryField('image')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
 
@@ -142,3 +140,9 @@ class Images(models.Model):
 
     class Meta:
         ordering = ['date']
+
+class photos(models.Model):
+    # title field
+    title = models.CharField(max_length=100)
+    #image field
+    image = CloudinaryField('image')
