@@ -105,7 +105,7 @@ class Article(models.Model):
 class Images(models.Model):
     image = CloudinaryField('image')
     name = models.CharField(max_length=60)
-    description = models.TextField()
+    description = models.TextField(null=True)
     author = models.CharField(max_length=40, default='admin')
     date = models.DateTimeField(null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
