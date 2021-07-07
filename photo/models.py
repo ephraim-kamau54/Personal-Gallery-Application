@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 import datetime as dt
 
 
+
 # Create your models here.
 class Editor(models.Model):
     first_name = models.CharField(max_length =30)
@@ -102,7 +103,7 @@ class Article(models.Model):
         return photos
 
 class Images(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = CloudinaryField('image')
     name = models.CharField(max_length=60)
     description = models.TextField()
     author = models.CharField(max_length=40, default='admin')
@@ -141,8 +142,3 @@ class Images(models.Model):
     class Meta:
         ordering = ['date']
 
-class Images(models.Model):
-    # title field
-    title = models.CharField(max_length=100)
-    #image field
-    image = CloudinaryField('image')
