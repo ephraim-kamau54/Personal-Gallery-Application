@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse,Http404
+from django.http import HttpResponse,Http404, request
 import datetime as dt
-from .models import Article, Images
+from .models import Article, Category, Images
 
 
 # Create your views here.
@@ -61,4 +61,14 @@ def filter_by_location(request,location_id):
    """
    images = Images.filter_by_location(id=location_id )
    return render (request, 'location.html', {"images":images})
+
+def gallery(request):
+    
+    context={}
+    images=Images.objects.all()
+    context["images"]=images
+    
+    return render(request, 'all-photos/all-images.html', context)
+     
+
    
