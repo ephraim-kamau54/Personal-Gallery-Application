@@ -64,9 +64,11 @@ def filter_by_location(request,location_id):
 
 def gallery(request):
     
+    context={}
+    images=Images.objects.all()
+    context["images"]=images
     
-    
-    return render(request, 'all-photos/all-images.html')
+    return render(request, 'all-photos/all-images.html', context)
      
 
    
