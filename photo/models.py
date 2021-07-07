@@ -1,8 +1,5 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
 import datetime as dt
-
-
 
 # Create your models here.
 class Editor(models.Model):
@@ -103,11 +100,11 @@ class Article(models.Model):
         return photos
 
 class Images(models.Model):
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=60)
-    description = models.TextField(null=True)
+    description = models.TextField()
     author = models.CharField(max_length=40, default='admin')
-    date = models.DateTimeField(null=True)
+    date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
 
@@ -141,4 +138,3 @@ class Images(models.Model):
 
     class Meta:
         ordering = ['date']
-
