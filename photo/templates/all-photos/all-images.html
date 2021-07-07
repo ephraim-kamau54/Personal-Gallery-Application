@@ -1,3 +1,4 @@
+{%extends 'all-photos/base.html%'}
 {%block content%}
 <section class="section card">
         <h1 class="section-heading text-center mb-5 mt-5 ">All Images</h1>
@@ -9,9 +10,15 @@
                         {%for img in images%}
                         <figure class="col-md-4">
                             <div class="list-group-item card my-2"> 
-                                <a href="{% url 'photo' photo.id %}"></a>
-                                <img src="{{photo.image.url}}" alt="{{img.name}}"
-                                style="min-height: 300px; max-height: 300px; max-width: 420px; min-width: 400px;">
+                                <a href="{%url 'photo' img.id%}">
+                                    <img src="{{img.image.url}}" alt="{{img.name}}"
+                                        style="min-height: 300px; max-height: 300px; max-width: 420px; min-width: 400px;">
+                                </a>
+                                
+                                <p>
+                                    {{img.description}}
+                                    {{img.id}}
+                                </p>
                             </div>
                         </figure> 
                     
@@ -21,6 +28,8 @@
                 </div>
             </div>
         </div>
+
+    
     </section>
 
 
