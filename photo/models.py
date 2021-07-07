@@ -141,7 +141,7 @@ class Images(models.Model):
     class Meta:
         ordering = ['date']
 
-class photos(models.Model):
+class Images(models.Model):
     # title field
     title = models.CharField(max_length=100)
     #image field
