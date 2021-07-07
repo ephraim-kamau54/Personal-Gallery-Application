@@ -66,9 +66,17 @@ def gallery(request):
     
     context={}
     images=Images.objects.all()
-    context["images"]=images
+    context={
+        "images":images
+    }
     
     return render(request, 'all-photos/all-images.html', context)
      
 
-   
+def viewPhoto(request, id):
+    # try:
+    #     image=Images.objects.get(id=id)
+    # except Images.DoesNotExist:
+    #     raise Http404()
+    image=Images.objects.get(id=id)
+    return render(request, 'all-photos/photos.html', {'image':image})

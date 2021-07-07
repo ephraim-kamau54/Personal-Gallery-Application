@@ -1,8 +1,9 @@
-
+{%extends 'all-photos/base.html%'}
+{%block content%}
 <div class="container-fluid">
     <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'photosToday' %}">The Personal Gallery Application</a>
+        <a class="navbar-brand" href="{% url 'home' %}">The Personal Gallery Application</a>
     </div>
     
     <div class="col-sm-4 col-md-4 navbar-center">
@@ -55,3 +56,5 @@
     
 </div>
 </nav>
+
+{%endblock%}
