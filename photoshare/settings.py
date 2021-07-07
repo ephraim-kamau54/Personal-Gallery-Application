@@ -14,7 +14,9 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,13 +25,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
+# adding config
+cloudinary.config( 
+  cloud_name = "photo-gallery5", 
+  api_key = "695374227893384", 
+  api_secret = "4Yb3PRdzU0NfquXq9KgCdXsFMJA" 
+)
 
 # Application definition
 
 INSTALLED_APPS = [
     'photo.apps.PhotoConfig',
     'bootstrap3',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
