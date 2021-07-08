@@ -21,7 +21,7 @@ import cloudinary.uploader
 import cloudinary.api
 
 cloudinary.config( 
-  cloud_name = "photo-gallery5", 
+  cloud_name = "photo-app54", 
   api_key = "695374227893384", 
   api_secret = "4Yb3PRdzU0NfquXq9KgCdXsFMJA" 
 )
