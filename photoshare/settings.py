@@ -16,6 +16,15 @@ import dj_database_url
 from decouple import config,Csv
 
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config( 
+  cloud_name = "photo-app54", 
+  api_key = "695374227893384", 
+  api_secret = "4Yb3PRdzU0NfquXq9KgCdXsFMJA" 
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,6 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# adding config
 
 
 # Application definition
@@ -30,6 +40,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INSTALLED_APPS = [
     'photo.apps.PhotoConfig',
     'bootstrap3',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,7 +82,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'photoshare.wsgi.application'
 
 
-MODE=config("MODE", default="dev")
+
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 # development
@@ -98,10 +109,11 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 
 
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'].update(db_from_env)
+
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 
 
 # Password validation
@@ -153,8 +165,8 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
